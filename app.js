@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import { errorMiddleware } from './middleware/error.js';
-import productRoute from './routes/product.route.js';
+import shipmentRoute from "./routes/shipment.route.js"
 
 dotenv.config();
 
@@ -21,7 +21,8 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the API' });
 });
-app.use('/api/products', productRoute);
+
+app.use('/api',shipmentRoute);
 
 // Error Middleware
 app.use(errorMiddleware);
